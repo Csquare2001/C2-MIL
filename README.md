@@ -6,7 +6,8 @@ To run the codes, the following dependencies are required:
 + python 3.9
 + PyTorch 2.0.1
 + cuda 11.3
-+ ...
++ pandas 
++ numpy 
 
 # 2. Files Descriptions
 ```plaintext
