@@ -37,7 +37,7 @@ class PatchCrossEntropyLoss(nn.Module):
 class Arc(nn.Module):
     def __init__(self, feat_num, cls_num) -> None:
         super().__init__()
-        self.w = nn.Parameter(torch.randn((feat_num, cls_num))) # [2, 10]
+        self.w = nn.Parameter(torch.randn((feat_num, cls_num))) 
 
     def forward(self, x, m=1, s=10):
         x_norm = normalize(x, p=2, dim=1) # [N, 2]
