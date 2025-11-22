@@ -1,6 +1,6 @@
 from dataset_single import dataset_npy
 from torch.utils.data import DataLoader
-from model.KLmodel_cc import MIL_vit as create_model
+from model.uc_model_cc import MIL_vit as create_model
 from torchnet import meter
 from smooth_label import LabelSmoothingCrossEntropy#,instance_CE
 from lossfunction.loss import Arc,PatchCrossEntropyLoss,TripletLoss,Instance_CE
