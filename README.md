@@ -7,9 +7,10 @@ To run the codes, the following dependencies are required:
 + python 3.9
 + PyTorch 2.0.1
 + cuda 11.3
-+ torchnet 
-+ pandas 
-+ numpy 
++ torchvision 0.15.2
++ torchnet 0.0.4
++ pandas 1.5.3
++ numpy 1.23.5
 
 # 2. Files Descriptions
 ```plaintext
