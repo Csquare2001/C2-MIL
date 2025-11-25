@@ -12,7 +12,7 @@ To run the codes, the following dependencies are required:
 + pandas 1.5.3
 + numpy 1.23.5
 
-# 2. Files Descriptions
+# 2. File Descriptions
 ```plaintext
 └── UC-MIL/  
       ├── train_te.py                  # Code for model training and testing
