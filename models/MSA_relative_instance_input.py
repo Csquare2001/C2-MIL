@@ -7,10 +7,8 @@ from collections import OrderedDict
 
 import torch
 import torch.nn as nn
-import model.relative_position_encoding
-import model.relative_position_encoding_HW
-# import relative_position_encoding
-# import relative_position_encoding_HW
+from models.relative_position_encoding import RelativePositionBias
+
 def drop_path(x, drop_prob: float = 0., training: bool = False):
     """
     Drop paths (Stochastic Depth) per sample (when applied in main path of residual blocks).
@@ -32,7 +30,6 @@ def drop_path(x, drop_prob: float = 0., training: bool = False):
     random_tensor.floor_()  # binarize
     output = x.div(keep_prob) * random_tensor
     return output
-
 
 class DropPath(nn.Module):
     """
@@ -63,7 +60,7 @@ class Attention(nn.Module):
         self.attn_drop = nn.Dropout(attn_drop_ratio)
         self.proj = nn.Linear(dim, dim)
         self.proj_drop = nn.Dropout(proj_drop_ratio)
-        self.relative_position = model.relative_position_encoding.RelativePositionBias(num_heads=num_heads,h = 14,w = 14)
+        self.relative_position = RelativePositionBias(num_heads=num_heads,h = 14,w = 14)
         # self.relative_position_HW = relative_position_encoding_HW.RelativePositionEmbedding(head_dim,14)
 
     def forward(self, x):
@@ -84,7 +81,7 @@ class Attention(nn.Module):
         #relative position encoding
         # relative_h_position,relative_w_position = self.relative_position_HW(q,self.num_heads,14,14,64)
         # attn += relative_h_position+relative_w_position
-        relative_position_bias = self.relative_position(14,14);
+        relative_position_bias = self.relative_position(14,14)
         attn += relative_position_bias
 
 
