@@ -1,8 +1,8 @@
 from tqdm import tqdm
 
-from dataset_evi_cau import dataset_npy
+from datasets import dataset_npy
 from torch.utils.data import DataLoader
-from model.model_evidence_causal import MIL_vit as create_model
+from models.uc_model_cc import UC_MIL as create_model
 from torchnet import meter
 from utils import PatchCrossEntropyLoss,TripletLoss,Instance_CE, compute_L_CI, compute_L_NC, LabelSmoothingCrossEntropy
 from sklearn.metrics import roc_curve, auc, roc_auc_score
