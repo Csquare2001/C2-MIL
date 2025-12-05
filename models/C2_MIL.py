@@ -185,12 +185,12 @@ class C2_MIL(nn.Module):  #
         x_mil_fea = x_msa[:, 1:, :]  # B*196*768
         x_cla_fea = self.linear(x_cla_fea)#B*128
 
-        # USL
+        # IPC
         evidence = self.evidence_classifier(x_mil_fea)
         dirichlet_params = self.calculate_dirichlet_params(evidence)
         instance_pred, uncertainty = self.calculate_belief_and_uncertainty(dirichlet_params)
 
-        # CPE
+        # BCE
         CauScore, topk_indices, F_c, F_nc = self.causality_score_module(x_mil_fea)
         if x.shape[0] == 1:
             F_c = self.emb_layer(F_c).squeeze().unsqueeze(0)
@@ -219,8 +219,6 @@ class C2_MIL(nn.Module):  #
 
 if __name__ == "__main__":
     a=torch.randn(4,196,16,16)
-    # a = torch.randn(4, 3, 224, 224).cuda()
-    # label = torch.tensor([1,0,1,0],dtype=torch.long)
     label = torch.randn(4,196)
     model = C2_MIL()
     model.train()
