@@ -1,4 +1,4 @@
-## UC-MIL: A novel uncertainty-aware causal multiple instance learning for CT image-based mutation prediction
+## C²-MIL: A novel calibrated causal multiple instance learning for CT image-based mutation prediction
 A preliminary implementation of UC-MIL.
 
 
