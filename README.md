@@ -14,7 +14,7 @@ To run the codes, the following dependencies are required:
 
 # 2. File Descriptions
 ```plaintext
-└── UC-MIL/  
+└── C2-MIL/  
       ├── train_te.py                  # Code for model training and testing
       ├── datasets.py                  # Dataset loading  
       ├── utils.py                     # Some supporting functions
