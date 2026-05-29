@@ -1,4 +1,4 @@
-## C²-MIL: A calibrated causal multiple instance learning framework for computed tomography-based mutation prediction in lung cancer
+## Calibrated causal multiple instance learning for computed tomography-based mutation prediction in lung cancer
 A preliminary implementation of C²-MIL.
 
 
